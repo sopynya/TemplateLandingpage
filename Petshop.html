@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Feliz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 id="logo">Pet Shop</h1> 
+            <div class="menu">
+                <a href="#services">Serviços</a>
+                <a href="#about">Sobre</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="banner">
+        <div class="banner">
+            <h2>Cuidando do seu pet com amor e carinho!</h2>
+        </div>
+    </section>
+
+    <section id="services" class="reveal">
+        <h2>Nossos Serviços</h2>
+        <ul>
+            <li>Banho e Tosa</li>
+            <li>Consultas Veterinárias</li>
+            <li>Produtos e Acessórios</li>
+            <li>Creche para Pets</li>
+        </ul>
+    </section>
+
+    <section id="about" class="reveal">
+        <h2>Sobre Nós</h2>
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2>Fale Conosco</h2>
+        <p>Email: contato@petshop.com.br</p>
+        <p>Telefone: (99) 99999-9999</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pet Shop. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        for (const section of reveals) {
+            const windowHeight = window.innerHeight;
+            const elementTop = section.getBoundingClientRect().top;
+            const revealPoint = 100;
+            if (elementTop < windowHeight - revealPoint) {
+                section.classList.add('active');
+            }
+        }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+</script>
+</script>
