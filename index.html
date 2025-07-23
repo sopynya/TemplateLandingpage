@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Feliz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 id="logo">Pet Shop</h1> 
+            <nav class="menu" aria-label="Navegação principal">
+                <a href="#services">Serviços</a>
+                <a href="#about">Sobre</a>
+                <a href="#contact">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="reveal">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Bem-vindo ao Pet Shop Feliz!</h2>
+                <p>O melhor cuidado para o seu melhor amigo. Agende já uma visita e faça seu pet mais feliz!</p>
+                <a href="#contact" class="cta-btn">Agende uma visita</a>
+            </div>
+            <div class="hero-image">
+                <img src="gatosruivos.jpg" alt="Cachorro e gato felizes" />
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="reveal">
+        <h2>Nossos Serviços</h2>
+        <ul>
+            <li>Banho e Tosa</li>
+            <li>Consultas Veterinárias</li>
+            <li>Produtos e Acessórios</li>
+            <li>Creche para Pets</li>
+        </ul>
+    </section>
+
+    <section id="about" class="reveal">
+        <h2>Sobre Nós</h2>
+        <h3 class="about-subtitle">Cuidando com amor, dedicação e alegria!</h3>
+        <p>
+        O Pet Shop Feliz é apaixonado por cuidar do seu animal de estimação!<br>
+        Nossa equipe é formada por profissionais experientes e dedicados, prontos para oferecer o melhor atendimento e serviços de qualidade.<br>
+        Aqui, seu pet recebe carinho, atenção e todo o cuidado que merece, em um ambiente seguro e acolhedor.<br>
+        Venha nos conhecer e faça parte da nossa família!
+        </p>
+        <ul class="about-highlights">
+            <li><span class="about-icon">🌟</span> Atendimento personalizado para cada pet</li>
+            <li><span class="about-icon">🏡</span> Ambiente acolhedor e seguro</li>
+            <li><span class="about-icon">👩‍⚕️</span> Equipe qualificada e apaixonada</li>
+            <li><span class="about-icon">💬</span> Comunicação transparente com os tutores</li>
+        </ul>
+        <div class="about-team">
+            <img src="fundopatas.jpg" alt="Equipe do Pet Shop Feliz" />
+            <p class="about-team-caption">Nossa equipe pronta para receber seu pet com carinho!</p>
+        </div>
+    </section>
+
+    <section id="testimonials" class="reveal">
+        <h2>O que nossos clientes dizem</h2>
+        <div class="testimonials-list">
+            <div class="testimonial">
+                <img src="gatosruivos.jpg" alt="Cliente com gato feliz" />
+                <blockquote>“Meu gato nunca esteve tão feliz e bem cuidado! Atendimento excelente.”</blockquote>
+                <cite>— Ana Paula</cite>
+            </div>
+            <div class="testimonial">
+                <img src="patinhas.jpg" alt="Cliente com cachorro feliz" />
+                <blockquote>“Equipe super atenciosa, recomendo para todos que amam seus pets!”</blockquote>
+                <cite>— João Silva</cite>
+            </div>
+            <div class="testimonial">
+                <img src="fundopatas.jpg" alt="Cliente com pet feliz" />
+                <blockquote>“Ambiente limpo, seguro e cheio de carinho. Meu cachorro adora!”</blockquote>
+                <cite>— Maria Fernanda</cite>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="reveal">
+        <h2>Fale Conosco</h2>
+        <p>Entre em contato conosco para agendar um serviço, tirar dúvidas ou enviar sugestões. Adoramos ouvir você!</p>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome" required 
+                    oninvalid="this.setCustomValidity('Por favor, preencha seu nome 😊')" 
+                    oninput="this.setCustomValidity('')" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required 
+                    oninvalid="this.setCustomValidity('Digite um e-mail válido para que possamos responder! 🐾')" 
+                    oninput="this.setCustomValidity('')" />
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="4" placeholder="Como podemos ajudar?" required 
+                    oninvalid="this.setCustomValidity('Conte pra gente como podemos ajudar! 😺')" 
+                    oninput="this.setCustomValidity('')"></textarea>
+            </div>
+            <button type="submit" class="contact-btn">Enviar Mensagem</button>
+        </form>
+        <div class="contact-info">
+            <p><strong>Email:</strong> contato@petshop.com.br</p>
+            <p><strong>Telefone:</strong> (99) 99999-9999</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pet Shop. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        for (const section of reveals) {
+            const windowHeight = window.innerHeight;
+            const elementTop = section.getBoundingClientRect().top;
+            const revealPoint = 100;
+            if (elementTop < windowHeight - revealPoint) {
+                section.classList.add('active');
+            }
+        }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Custom email validation for @
+    const emailInput = document.getElementById('email');
+    if (emailInput) {
+        emailInput.addEventListener('input', function() {
+            if (this.value && !this.value.includes('@')) {
+                this.setCustomValidity('O e-mail precisa ter um @ para ser válido! 💌');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    }
+</script>
+</html>
