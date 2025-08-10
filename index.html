@@ -149,5 +149,12 @@
             }
         });
     }
+
+    document.documentElement.style.colorScheme = "light";
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        document.documentElement.style.colorScheme = "light";
+        document.documentElement.classList.remove("dark");
+    });
 </script>
 </html>
